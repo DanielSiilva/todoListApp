@@ -1,25 +1,32 @@
-import {View, Text, TextInput, TouchableOpacity} from 'react-native'
+import {Text} from 'react-native'
 import { Header } from '../../components/Header'
-import { styles } from './styles'
+
+import {
+    Container,
+    FormContainer,
+    Input,
+    Button
+
+} from './styles'
+
 
 
 export function Home (){
 
 
     return(
-        <View >
+        <Container >
             <Header />
 
-            <View >
-                <TextInput
+            <FormContainer >
+                <Input
                     placeholder='Adicione uma nova tarefa'
-                    style={styles.inputTask}
                 />
 
-                <TouchableOpacity>
-                    <Text> + </Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+                <Button>
+                   <Text>+</Text>
+                </Button>
+            </FormContainer>
+        </Container>
     )
 }
