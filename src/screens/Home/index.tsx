@@ -1,11 +1,16 @@
-import {Text} from 'react-native'
+import {Text, View} from 'react-native'
 import { Header } from '../../components/Header'
 
 import {
     Container,
     FormContainer,
     Input,
-    Button
+    Button,
+    TaskCount,
+    Maids,
+    Finished,
+    UpdateTasks,
+    Content
 
 } from './styles'
 
@@ -27,6 +32,19 @@ export function Home (){
                    <Text>+</Text>
                 </Button>
             </FormContainer>
+
+            <TaskCount>
+                <Content>
+                    <Maids> Criadas</Maids>
+                    <UpdateTasks>0</UpdateTasks>
+                </Content>
+
+                <Content>
+                    <Finished>Concluídas</Finished>
+                    <UpdateTasks>0</UpdateTasks>
+                </Content>
+                
+            </TaskCount>
         </Container>
     )
 }
