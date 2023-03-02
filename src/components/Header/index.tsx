@@ -1,13 +1,17 @@
-import {View, Image} from 'react-native'
 import Logo from '../../../assets/Logo.png'
-import { styles } from './styles'
+
+import  {
+    HeaderContainer,
+    LogoImage
+
+} from './styles'
 
 export function Header (){
 
 
     return(
-        <View style={styles.container}>
-           <Image source={Logo} style={styles.imageLogo}/>
-        </View>
+        <HeaderContainer >
+           <LogoImage source={Logo}/>
+        </HeaderContainer>
     )
 }

@@ -1,21 +1,16 @@
-import {StyleSheet} from 'react-native'
+import styled from "styled-components/native";
 
+export const HeaderContainer = styled.View`
+    height: 173px;
+    align-items: center;
+    justify-content: center;
 
-export const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        width:'100%',
-        padding: 100,
+    background: ${props => props.theme['gray_700']};
 
+`
 
-        backgroundColor: '#0D0D0D',
+export const LogoImage = styled.Image`
+    width: 110.34px;
+    height: 32px;
 
-      
-    },
-    imageLogo:{
-  
-        
-    },
-})
+`
