@@ -1,5 +1,7 @@
-import {Text, View} from 'react-native'
+
 import { Header } from '../../components/Header'
+import { EvilIcons } from '@expo/vector-icons';
+
 
 import {
     Container,
@@ -26,10 +28,11 @@ export function Home (){
             <FormContainer >
                 <Input
                     placeholder='Adicione uma nova tarefa'
+                    placeholderTextColor={'#808080'}
                 />
 
                 <Button>
-                   <Text>+</Text>
+                    <EvilIcons name="plus" size={24} color="#F2F2F2" />
                 </Button>
             </FormContainer>
 
