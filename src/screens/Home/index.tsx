@@ -20,7 +20,7 @@ import {
 
 import { Tasks } from '../../components/Tasks';
 import { useState } from 'react';
-import { FlatList, Text } from 'react-native';
+import { FlatList} from 'react-native';
 
 import {MockTasks} from '../../MockDados/MockDados'
 import { NoTasks } from '../../components/NoTasks';

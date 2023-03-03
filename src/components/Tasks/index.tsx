@@ -1,4 +1,4 @@
-import {View, Text} from 'react-native'
+import {View, Text, TouchableOpacity} from 'react-native'
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 
 
@@ -19,20 +19,27 @@ export function Tasks({task, isComplete}: TaskProps){
 
     return (
         <Card>
-             <Feather 
-                name="circle" 
-                size={24} 
-                color="#4EA8DE" /> 
+            <TouchableOpacity>
+                <Feather 
+                    name="circle" 
+                    size={24} 
+                    color="#4EA8DE" 
+                /> 
+
+            </TouchableOpacity>
 
              <TextTask>
                 {task}
              </TextTask>
             
-             <MaterialCommunityIcons 
-                name="trash-can-outline" 
-                size={24} 
-                color="#808080" 
-            />
+            <TouchableOpacity>
+                <MaterialCommunityIcons 
+                    name="trash-can-outline" 
+                    size={24} 
+                    color="#808080" 
+                />
+            </TouchableOpacity>
+            
         </Card>
     )
 }
