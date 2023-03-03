@@ -75,4 +75,19 @@ yarn start
 ```
 ---
 
+## Autores
+
+<table>
+ <table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/DanielSiilva">
+        <img src="https://avatars.githubusercontent.com/u/94769388?v=4" width="100px;" alt="Foto do Daniel da Silva no GitHub"/><br>
+        <sub>
+          <b>@DanielSiilva</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+
 
