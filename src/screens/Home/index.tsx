@@ -2,6 +2,8 @@
 import { Header } from '../../components/Header'
 import { EvilIcons } from '@expo/vector-icons';
 
+import {Alert} from 'react-native'
+
 
 import {
     Container,
@@ -25,7 +27,7 @@ import { FlatList} from 'react-native';
 import {MockTasks} from '../../MockDados/MockDados'
 import { NoTasks } from '../../components/NoTasks';
 
- type NewTasks = {
+type NewTasks = {
   id: string;
   task: string,
   isComplete: boolean,
@@ -47,6 +49,19 @@ export function Home (){
 
        setTasks((prevState) => [...prevState, newTask])
        setNewTasks('')
+    }
+
+    function handleTasksDelete(id:string){
+        Alert.alert("Remover", `Remover a tarefa?`,[
+            {
+                text: 'sim',
+                onPress: () => setTasks((prevState) => prevState.filter(item => item.id !== id))
+            },
+            {
+                text: 'Não',
+                style: 'cancel'
+            }
+        ])
     }
 
 
@@ -110,6 +125,7 @@ export function Home (){
                             task={item.task}
                             isComplete={item.isComplete}
                             taskMarkComplete={()=>taskMarkComplete(item.id) }
+                            handleTasksDelete={()=>handleTasksDelete(item.id)}
                         />
                       )}
                     ListEmptyComponent={()=>(

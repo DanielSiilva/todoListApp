@@ -13,10 +13,11 @@ interface TaskProps{
     task: string,
     isComplete: boolean,
     taskMarkComplete: () => void,
+    handleTasksDelete: ()=> void,
 }
 
 
-export function Tasks({task, isComplete, taskMarkComplete}: TaskProps){
+export function Tasks({task, isComplete, taskMarkComplete, handleTasksDelete}: TaskProps){
 
     return (
         <Card>
@@ -42,7 +43,9 @@ export function Tasks({task, isComplete, taskMarkComplete}: TaskProps){
                 {task}
              </TextTask>
             
-            <TouchableOpacity>
+            <TouchableOpacity
+                onPress={handleTasksDelete}
+            >
                 <MaterialCommunityIcons 
                     name="trash-can-outline" 
                     size={24} 
