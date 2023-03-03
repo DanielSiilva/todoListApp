@@ -12,13 +12,23 @@ import {
     Maids,
     Finished,
     UpdateTasks,
-    Content
+    Content,
+    ContainerCard,
 
 } from './styles'
 
 
+import { Tasks } from '../../components/Tasks';
+import { useState } from 'react';
+import { FlatList } from 'react-native';
+
+import {MockTasks} from '../../MockDados/MockDados'
+
+
+
 
 export function Home (){
+    const [tasks, setTask] = useState(MockTasks)
 
 
     return(
@@ -48,6 +58,22 @@ export function Home (){
                 </Content>
                 
             </TaskCount>
+
+            <ContainerCard>
+                <FlatList 
+                    data={tasks}
+                    renderItem={({ item }) => (
+                        <Tasks
+                            key={item.id}
+                            task={item.task}
+                            isComplete={item.isComplete}
+                        />
+                      )}
+
+                />
+            </ContainerCard>
+            
+            
         </Container>
     )
 }

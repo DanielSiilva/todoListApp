@@ -111,3 +111,10 @@ export const UpdateTasks = styled.Text`
 
 
 `
+
+export const ContainerCard = styled.View`
+    
+    flex: 1;
+    align-items: center;
+    margin-top: 10px;
+`
