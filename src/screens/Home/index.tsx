@@ -20,7 +20,7 @@ import {
 
 import { Tasks } from '../../components/Tasks';
 import { useState } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Text } from 'react-native';
 
 import {MockTasks} from '../../MockDados/MockDados'
 
@@ -69,7 +69,9 @@ export function Home (){
                             isComplete={item.isComplete}
                         />
                       )}
-
+                    ListEmptyComponent={()=>(
+                        <Text>Lista fazia</Text>
+                    )}        
                 />
             </ContainerCard>
             
