@@ -25,11 +25,30 @@ import { FlatList} from 'react-native';
 import {MockTasks} from '../../MockDados/MockDados'
 import { NoTasks } from '../../components/NoTasks';
 
-
+ type NewTasks = {
+  id: string;
+  task: string,
+  isComplete: boolean,
+}
 
 
 export function Home (){
-    const [tasks, setTasks] = useState(MockTasks)
+    const [tasks, setTasks] = useState(MockTasks);
+    const [newTasks, setNewTasks] = useState('')
+
+
+
+    function handleTasksAdd(){
+       const newTask:NewTasks ={
+            id: (tasks.length + 1).toString(),
+            task: newTasks,
+            isComplete: false
+       }
+
+       setTasks((prevState) => [...prevState, newTask])
+       setNewTasks('')
+    }
+
 
 
 
@@ -60,9 +79,11 @@ export function Home (){
                 <Input
                     placeholder='Adicione uma nova tarefa'
                     placeholderTextColor={'#808080'}
+                    onChangeText={setNewTasks}
+                    value={newTasks}
                 />
 
-                <Button>
+                <Button onPress={handleTasksAdd}>
                     <EvilIcons name="plus" size={24} color="#F2F2F2" />
                 </Button>
             </FormContainer>
