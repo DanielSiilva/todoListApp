@@ -32,6 +32,15 @@ export function Home (){
     const [tasks, setTask] = useState(MockTasks)
 
 
+    const tasksLength = tasks.length
+
+    let completedTasksCounter = 0
+    for( const completed of tasks){
+        if(completed.isComplete){
+          completedTasksCounter ++
+        }
+    }
+
     return(
         <Container >
             <Header />
@@ -50,12 +59,12 @@ export function Home (){
             <TaskCount>
                 <Content>
                     <Maids> Criadas</Maids>
-                    <UpdateTasks>0</UpdateTasks>
+                    <UpdateTasks>{tasksLength}</UpdateTasks>
                 </Content>
 
                 <Content>
                     <Finished>Concluídas</Finished>
-                    <UpdateTasks>0</UpdateTasks>
+                    <UpdateTasks>{completedTasksCounter}</UpdateTasks>
                 </Content>
                 
             </TaskCount>

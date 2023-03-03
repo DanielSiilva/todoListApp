@@ -21,16 +21,16 @@ export function Tasks({task, isComplete}: TaskProps){
         <Card>
             <TouchableOpacity>
                 {isComplete ?
-                    <Feather 
-                        name="circle" 
-                        size={24} 
-                        color="#4EA8DE" 
-                    />
-                    :
                     <AntDesign 
                         name="checkcircle" 
                         size={24}                  
                         color="#5E60CE"
+                    />
+                    :
+                    <Feather 
+                        name="circle" 
+                        size={24} 
+                        color="#4EA8DE" 
                     />
                 }
             </TouchableOpacity>

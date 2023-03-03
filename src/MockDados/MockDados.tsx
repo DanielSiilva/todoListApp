@@ -8,12 +8,12 @@ export const MockTasks: Task[] = [
     {
         id:'1',
         task: 'Estudar Logica',
-        isComplete: true
+        isComplete: false
     },
     {
         id:'2',
         task: 'Estudar Laços de repetições',
-        isComplete: false
+        isComplete: true
     } ,
     {
         id: '3',
