@@ -23,6 +23,7 @@ import { useState } from 'react';
 import { FlatList, Text } from 'react-native';
 
 import {MockTasks} from '../../MockDados/MockDados'
+import { NoTasks } from '../../components/NoTasks';
 
 
 
@@ -70,7 +71,7 @@ export function Home (){
                         />
                       )}
                     ListEmptyComponent={()=>(
-                        <Text>Lista fazia</Text>
+                        <NoTasks/>
                     )}        
                 />
             </ContainerCard>
