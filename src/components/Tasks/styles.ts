@@ -37,13 +37,13 @@ export const TextTask = styled.Text<TaskProps>`
         props.variant === true ?
 
         css`
-            text-decoration:none;
+            color: #808080; 
+            text-decoration: line-through
         ` : 
 
         css`
             text-decoration:none;
-            color: #808080; 
-            text-decoration: line-through
+            
         `
     
     }

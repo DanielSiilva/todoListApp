@@ -12,14 +12,17 @@ import {
 interface TaskProps{
     task: string,
     isComplete: boolean,
+    taskMarkComplete: () => void,
 }
 
 
-export function Tasks({task, isComplete}: TaskProps){
+export function Tasks({task, isComplete, taskMarkComplete}: TaskProps){
 
     return (
         <Card>
-            <TouchableOpacity>
+            <TouchableOpacity
+                onPress={taskMarkComplete}
+            >
                 {isComplete ?
                     <AntDesign 
                         name="checkcircle" 

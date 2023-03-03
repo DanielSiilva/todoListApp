@@ -29,10 +29,19 @@ import { NoTasks } from '../../components/NoTasks';
 
 
 export function Home (){
-    const [tasks, setTask] = useState(MockTasks)
+    const [tasks, setTasks] = useState(MockTasks)
 
 
-    const tasksLength = tasks.length
+
+    const taskMarkComplete = (markComplete: string) => {
+        let taskMapped = tasks.map((item) =>
+           item.id === markComplete
+              ? { ...item, isComplete: !item.isComplete }
+              : { ...item }
+        );
+        setTasks(taskMapped);
+     };
+    
 
     let completedTasksCounter = 0
     for( const completed of tasks){
@@ -40,6 +49,8 @@ export function Home (){
           completedTasksCounter ++
         }
     }
+
+    const tasksLength = tasks.length
 
     return(
         <Container >
@@ -77,6 +88,7 @@ export function Home (){
                             key={item.id}
                             task={item.task}
                             isComplete={item.isComplete}
+                            taskMarkComplete={()=>taskMarkComplete(item.id) }
                         />
                       )}
                     ListEmptyComponent={()=>(
