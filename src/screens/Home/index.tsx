@@ -1,9 +1,7 @@
 
 import { Header } from '../../components/Header'
 import { EvilIcons } from '@expo/vector-icons';
-
 import {Alert} from 'react-native'
-
 
 import {
     Container,
@@ -52,7 +50,7 @@ export function Home (){
     }
 
     function handleTasksDelete(id:string){
-        Alert.alert("Remover", `Remover a tarefa?`,[
+        Alert.alert("Remover", `Remover a tarefa ${id}?  `,[
             {
                 text: 'sim',
                 onPress: () => setTasks((prevState) => prevState.filter(item => item.id !== id))

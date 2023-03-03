@@ -7,8 +7,6 @@ import {
     TextTask
 } from './styles'
 
-
-
 interface TaskProps{
     task: string,
     isComplete: boolean,
