@@ -18,6 +18,6 @@ export const MockTasks: Task[] = [
     {
         id: '3',
         task: 'Codar mais e mais',
-        isComplete: false
+        isComplete: true
     }
 ]

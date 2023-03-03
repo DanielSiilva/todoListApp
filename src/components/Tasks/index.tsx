@@ -1,5 +1,5 @@
-import {View, Text, TouchableOpacity} from 'react-native'
-import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import {TouchableOpacity} from 'react-native'
+import { Feather, MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 
 
 import {
@@ -20,15 +20,22 @@ export function Tasks({task, isComplete}: TaskProps){
     return (
         <Card>
             <TouchableOpacity>
-                <Feather 
-                    name="circle" 
-                    size={24} 
-                    color="#4EA8DE" 
-                /> 
-
+                {isComplete ?
+                    <Feather 
+                        name="circle" 
+                        size={24} 
+                        color="#4EA8DE" 
+                    />
+                    :
+                    <AntDesign 
+                        name="checkcircle" 
+                        size={24}                  
+                        color="#5E60CE"
+                    />
+                }
             </TouchableOpacity>
 
-             <TextTask>
+             <TextTask variant={isComplete}>
                 {task}
              </TextTask>
             

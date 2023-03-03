@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled, {css} from "styled-components/native";
 
 
 export const Card = styled.View`
@@ -21,11 +21,31 @@ export const Card = styled.View`
     margin-bottom: 10px;
 `
 
-export const TextTask = styled.Text`
+interface TaskProps {
+    variant?: boolean
+}
+
+export const TextTask = styled.Text<TaskProps>`
     width: 300px;
     
     color: ${props => props.theme['gray_100']};
     font-weight: 400;
     font-size: 14px; 
+
+
+    ${(props) =>
+        props.variant === true ?
+
+        css`
+            text-decoration:none;
+        ` : 
+
+        css`
+            text-decoration:none;
+            color: #808080; 
+            text-decoration: line-through
+        `
+    
+    }
 
 `
